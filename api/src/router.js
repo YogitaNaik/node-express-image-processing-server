@@ -39,4 +39,9 @@ router.post('/upload',upload.single('photo'), (request, response) => {
  }
  });
  
+ var path = require("path");
+
+const photoPath = path.resolve(__dirname,'../../client/photo-viewer.html');
+router.get('/photo-viewer', (request, response) => {response.sendFile(photoPath)});
+ 
  module.exports = router;
